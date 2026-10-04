@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Go On A Date With Me?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page-shell">
+    <div class="ambient ambient-a"></div>
+    <div class="ambient ambient-b"></div>
+
+    <section class="app-card" id="appCard" aria-live="polite">
+      <div class="screen active" data-screen="intro">
+        <div class="tiny-confetti" aria-hidden="true">• ✦ • ♡ • ✧ •</div>
+        <div class="hero-icon">💌</div>
+        <h1>WAIT YOU ACTUALLY<br>SAID YES??</h1>
+        <p class="subtext">okayyy, now we have to make this official</p>
+        <button class="primary-btn" data-next="ask">let's do it <span>→</span></button>
+      </div>
+
+      <div class="screen" data-screen="ask">
+        <div class="avatar-wrap">
+          <div class="avatar">🧑‍💻</div>
+          <span class="heart-pop">♥</span>
+        </div>
+        <h2>Will you go on a date with me?</h2>
+        <p class="subtext">choose carefully… there is only one correct answer 😌</p>
+        <div class="choice-row" id="choiceArea">
+          <button class="yes-btn" data-next="schedule">YES 💗</button>
+          <button class="no-btn" id="noBtn">no</button>
+        </div>
+      </div>
+
+      <div class="screen" data-screen="schedule">
+        <div class="mini-icon">🗓️</div>
+        <h2>So... when are you free?</h2>
+        <p class="subtext">Pick a day + time that works for you</p>
+
+        <form id="scheduleForm" class="form-stack">
+          <label>
+            <span>Pick a Day</span>
+            <input id="dateInput" type="date" required />
+          </label>
+          <label>
+            <span>What Time?</span>
+            <select id="timeInput" required>
+              <option value="">Select a time</option>
+              <option>4:00 PM</option>
+              <option>5:00 PM</option>
+              <option>6:00 PM</option>
+              <option>7:00 PM</option>
+              <option>8:00 PM</option>
+            </select>
+          </label>
+          <button class="primary-btn full" type="submit">next <span>→</span></button>
+        </form>
+      </div>
+
+      <div class="screen" data-screen="mood">
+        <div class="mini-icon">✨</div>
+        <h2>What are we feeling?!</h2>
+        <p class="subtext">pick the vibe for our date</p>
+
+        <div class="activity-grid" id="activityGrid">
+          <button data-activity="Coffee">☕<span>Coffee</span></button>
+          <button data-activity="Movie">🎬<span>Movie</span></button>
+          <button data-activity="Dinner">🍝<span>Dinner</span></button>
+          <button data-activity="Picnic">🧺<span>Picnic</span></button>
+          <button data-activity="Arcade">🕹️<span>Arcade</span></button>
+          <button data-activity="Surprise me">🎁<span>Surprise</span></button>
+        </div>
+        <button class="primary-btn full continue-btn" id="activityNext" disabled>continue <span>→</span></button>
+      </div>
+
+      <div class="screen" data-screen="done">
+        <div class="sparkles">✦ ♡ ✦</div>
+        <h2>glad you didn't say no,<br>be ready by <span id="finalTime">6</span>, I'm coming to get you 💌</h2>
+        <p id="finalPlan" class="summary-pill"></p>
+        <button class="primary-btn" id="restartBtn">let's start again ↻</button>
+      </div>
+    </section>
+
+    <p class="footer-note">made with a little courage & a lot of pink ♡</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
